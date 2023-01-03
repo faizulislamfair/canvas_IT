@@ -80,7 +80,8 @@ function Header(props) {
                         <Box sx={{ color: '#000000', flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
                             <div style={{
                                 fontSize: '25px',
-                                color: 'green'
+                                color: 'green',
+                                fontWeight: '600'
                             }}>
                                 Canvas IT
                             </div>
