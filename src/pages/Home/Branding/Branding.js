@@ -33,7 +33,13 @@ const Branding = () => {
                 }}>Hire Us</Button>
             </Stack>
             <Box sx={{
-                width: '50%'
+                width: '50%',
+                //display: ['none', 'none', 'block'],
+                display: {
+                    xs: 'none',
+                    sm: 'none',
+                    md: 'block'
+                }
             }}>
                 <img src="./canvas.svg" alt="Banner_Image" style={{ width: '100%' }} />
             </Box>
