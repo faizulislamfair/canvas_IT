@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 
-const SectionTitle = ({ title, colored }) => {
+const SectionTitleTwo = ({ title, colored }) => {
     return (
         <div>
             <Typography sx={{
@@ -17,4 +17,4 @@ const SectionTitle = ({ title, colored }) => {
     );
 };
 
-export default SectionTitle;
+export default SectionTitleTwo;

@@ -1,7 +1,9 @@
-import { Box, IconButton, Tab, Tabs } from '@mui/material';
+import { Box, IconButton, Tab, Tabs, Grid } from '@mui/material';
 import React, { useState } from 'react';
 import SectionTitleTwo from './../../../components/SectionTitle/SectionTitleTwo';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import CanvasCard from './../../../components/CanvasCard/CanvasCard';
+import { cardData } from './CardData';
 
 
 const OurWorks = () => {
@@ -16,11 +18,12 @@ const OurWorks = () => {
     return (
         <Box sx={{ my: 5, mb: 10 }}>
 
-            {/* Heading Section */}
+            {/* Header Section */}
             <Box sx={{
                 display: 'flex',
                 justifyContent: 'space-between',
-                alignContent: 'center'
+                alignContent: 'center',
+                mb: 5
             }}>
                 <SectionTitleTwo title="Displaying some of" colored="our works" sx={{
                     textAlign: 'left',
@@ -73,6 +76,19 @@ const OurWorks = () => {
                     </Box>
                 </Box>
             </Box>
+
+            {/* Cards Section */}
+
+            <Grid container spacing={3} justifyContent='center'>
+                {
+                    cardData[value].map(image => (
+                        <Grid item>
+                            <CanvasCard image={image}></CanvasCard>
+                        </Grid>
+                    ))
+                }
+            </Grid>
+
 
         </Box>
     );
