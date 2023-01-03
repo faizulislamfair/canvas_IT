@@ -53,7 +53,8 @@ function Header(props) {
             <AppBar component="nav" sx={{
                 backgroundColor: 'transparent',
                 boxShadow: 'none',
-                mt: 2
+                mt: 2,
+                position: 'static'
             }}>
                 <Container>
                     <Toolbar>

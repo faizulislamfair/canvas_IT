@@ -3,10 +3,25 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 
-const CanvasAccordion = () => {
+const CustomIcon = () => {
+    return <div>
+        <div className='expandIcon'>
+            <AddIcon></AddIcon>
+        </div>
+        <div className='compressIcon'>
+            <RemoveIcon></RemoveIcon>
+        </div>
+    </div>
+}
+
+const CanvasAccordion = ({ Content }) => {
+
+    const { title, description } = Content;
+
     return (
         <Accordion sx={{
             boxShadow: 'none',
@@ -17,25 +32,38 @@ const CanvasAccordion = () => {
             },
             '& .Mui-expanded': {
                 '& p': {
-                    color: 'primary.green'
+                    color: 'primary.green',
+                },
+                '& .expandIcon': {
+                    display: 'none'
+                },
+                '& .compressIcon': {
+                    display: 'block',
+                    '& svg': {
+                        color: 'primary.green'
+                    }
                 }
             }
         }}>
             <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
+                sx={{
+                    '& .compressIcon': {
+                        display: 'none'
+                    }
+                }}
+                expandIcon={<CustomIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
             >
                 <Typography sx={{
                     fontWeight: 'bold'
-                }}>Accordion 1</Typography>
+                }}>{title}</Typography>
             </AccordionSummary>
             <AccordionDetails>
                 <Typography sx={{
                     color: '#5A7184'
                 }}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                    malesuada lacus ex, sit amet blandit leo lobortis eget.
+                    {description}
                 </Typography>
             </AccordionDetails>
         </Accordion>
